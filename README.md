@@ -13,8 +13,14 @@
 
 ```bash
 # Клонировать проект
-git clone https://github.com/you/hugo-boilerplate.git my-site
+git clone https://github.com/tananin/hugo-boilerplate.git my-site
 cd my-site
+rm -rf .git
+git init
+git remote add origin https://gitlab.com/you/client-project.git
+git add .
+git commit -m "Init from boilerplate"
+git push -u origin master
 
 # Установить зависимости
 npm install
