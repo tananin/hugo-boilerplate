@@ -1,0 +1,29 @@
+
+# Hugo output
+/public/
+/resources/_gen/
+
+# Node modules
+/node_modules/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# Hugo Cache
+hugo_stats.json
+
+# Build Artifacts
+dist/
