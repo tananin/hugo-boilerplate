@@ -1,0 +1,15 @@
+{
+  "contact": {
+    "phone": "+7 (495) 000-00-00",
+    "address": "Москва, ул. Ленина, 1, стр. 1",
+    "map_link": "/about#map",
+    "metro": "м. Савёловская",
+    "regim": "(без выходных с 8:00 до 20:00)",
+    "map": "<script type=\"text/javascript\" charset=\"utf-8\" async src=\"https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Accbfed2fbfabe81e00714d5302c22a1d70bbf84ccd381f52b3551b6374eca3a1&amp;width=100%25&amp;height=480&amp;lang=ru_RU&amp;scroll=false\"></script>\n"
+  },
+  "footer": {
+    "copy": " © ООО \"Company\",",
+    "polit": "Политика обработки персонлаьных данных",
+    "polit_link": "/privacy-policy/"
+  }
+}

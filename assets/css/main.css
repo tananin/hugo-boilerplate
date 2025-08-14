@@ -7,8 +7,22 @@
 @theme {
   --font-sans: Montserrat, sans-serif;
   --font-display: Roboto, sans-serif;
+
+  --text-display-xxl: 80px;
+  --text-display-xxl--line-height: 120%; 
+  --text-display-xxl--letter-spacing: 0.5%; 
+  --text-display-xxl--font-weight: 500; 
+
+  --color-primary-black: #23201E;
+  --color-primary-white: #F7F5F1;
 }
 
+@layer base {
+    body {
+        @apply bg-primary-white font-sans ;
+    }
+
+}
 
 
 @utility container {

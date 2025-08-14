@@ -1,0 +1,20 @@
+{
+  "main": [
+    {
+      "title": "Главная ",
+      "url": "/",
+      "weight": 10,
+      "isMain": true,
+      "isFooter": false,
+      "isExternal": false
+    },
+    {
+      "title": "Новости",
+      "url": "/news/",
+      "weight": 15,
+      "isMain": true,
+      "isFooter": false,
+      "isExternal": false
+    }
+  ]
+}

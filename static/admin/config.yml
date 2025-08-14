@@ -1,0 +1,121 @@
+# For GitLab - Tananin/REPONAME
+backend:
+  name: gitlab
+  repo: tananin/REPONAME                                                              # Path to your GitLab repository
+  auth_type: pkce                                                                       # Required for pkce
+  app_id:                                                                               # Application ID from your GitLab settings
+  branch: master
+
+local_backend: true
+
+media_folder: static/images
+public_folder: /images
+
+editor:
+  preview: false
+
+collections:
+  # ================================
+  # Конфигурация сайта
+  # ================================
+  - name: "config"
+    label: "Конфигурация"
+    files:
+      - name: "contact"
+        label: "Конфигурация"
+        file: "data/config.json"
+        fields:
+          - label: "Телефоны"
+            name: "mess"
+            widget: "object"
+            fields:
+            - { label: "Веб шоп", name: "webshop", widget: "string" }
+            - { label: "Телефон", name: "phone", widget: "string" }
+            - { label: "Ссылка телефон ", name: "phone_link", widget: "string" }
+            - { label: "WhatsApp", name: "whatsapp", widget: "string", required: false, hint: "Будет скрыто если оставить пустым, пример: 74951478298" }
+            - { label: "Telegram", name: "telegram", widget: "string", required: false, hint: "Будет скрыто если оставить пустым" }
+          - label: "Контакты"
+            name: "contact"
+            widget: "object"
+            fields:
+            - { label: "Адрес", name: "address", widget: "string", required: false }
+            - { label: "Метро", name: "metro", widget: "string", required: false }
+            - { label: "Режим работы", name: "regim", widget: "string", required: false }
+            - { label: "Ссылка на карту", name: "map_link", widget: "string", required: false, hint: "Будет скрыто если оставить пустым" }
+            - { label: "Карта", name: "map", widget: "text" }
+          - label: "Подвал сайта"
+            name: "footer"
+            widget: "object"
+            fields:
+            - { label: "Копирайт", name: "copy", widget: "string" }
+            - { label: "Текст политики", name: "polit", widget: "string" }
+            - { label: "Ссылка политики", name: "polit_link", widget: "string" }
+
+  # ================================
+  # Меню сайта
+  # ================================
+  - name: "menu"
+    label: "Меню сайта"
+    files:
+      - name: "main_menu"
+        label: "Основное меню"
+        file: "data/menu.json"
+        fields:
+          - label: "Главное меню"
+            name: "main"
+            widget: "list"
+            fields:
+              - { label: "Название", name: "title", widget: "string" }
+              - { label: "Ссылка", name: "url", widget: "string" }
+              - { label: "Порядок", name: "weight", widget: "number" }
+              - { label: "Показать в основном меню", name: "isMain", widget: "boolean", default: true }
+              - { label: "Показать в футере", name: "isFooter", widget: "boolean", default: false }
+              - { label: "Внешняя ссылка", name: "isExternal", widget: "boolean", default: false }
+  # ================================
+  # Новости
+  # ================================
+  - name: "news"
+    label: "Новости"
+    folder: "content/news"
+    create: true
+    fields:
+      - { label: "Дата", name: "date", widget: "datetime" }
+      - { label: "Черновик", name: "draft", widget: "boolean", default: false }
+      - { label: "Заголовок", name: "title", widget: "string" }
+      - { label: "Изображение", name: "src", widget: "image"}
+      - { label: "Описание", name: "description", widget: "text" }
+      - { label: "Текст", name: "body", widget: "markdown" }
+  # ================================
+  # Страницы сайта
+  # ================================
+  - name: "pages"
+    label: "Страницы"
+    files:
+      - file: "content/_index.md"
+        label: "Главная страница"
+        name: "home"
+        fields:
+          - { label: "Дата", name: "date", widget: "datetime" }
+          - { label: "Черновик", name: "draft", widget: "boolean", default: false }
+          - { label: "SEO Заголовок", name: "title", widget: "string" }
+          - { label: "SEO Описание", name: "description", widget: "text" }
+          - { label: "SEO Ключевые слова", name: "keywords", widget: "string" }
+
+          - label: "Промо блок"
+            name: "hero"
+            collapsed: true
+            widget: "object"
+            fields:
+              - { label: "Заголовок", name: "title", widget: "string" }
+              - { label: "Описание", name: "desc", widget: "text" }
+
+          - label: "О нас"
+            name: "about"
+            collapsed: true
+            widget: "object"
+            fields:
+              - { label: "Заголовок", name: "title", widget: "string" }
+              - { label: "Описание", name: "desc", widget: "text" }
+              - { label: "Ссылка", name: "link", widget: "string" }
+
+

@@ -1,0 +1,15 @@
+<footer class="footer bg-tone-1 border-t border-gray-1">
+    <div class="container py-5 md:px-7 text-m flex flex-col gap-4">
+        <div class="md:grid md:grid-cols-2">
+
+         {{ $footer := .Site.Data.config.footer }}
+ 
+            <div class="text-gray-2">
+                {{ $footer.copy }}, {{ now.Format "2006" }}
+            </div>
+            <a href="{{ $footer.polit_link }}" class="text-gray-2 md:text-right">
+                {{ $footer.polit }}
+            </a>
+        </div>
+    </div>
+</footer>

@@ -1,16 +1,30 @@
 <header class="border-b border-gray-300 bg-[#dddddd]">
 <div class="container px-4  mx-auto py-6">
     <div class="flex justify-between">
-        <div class="">Logos</div>
+        <div class="">
+            <a href="{{ .Site.BaseURL }}" aria-label="На главную">
+                {{/* readFile "assets/images/logo.svg" | safeHTML */}}
+            </a>
+        </div>
         <nav class="">
             <ul class="flex gap-4">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contacts</a></li>
+            {{ $current := .Page.RelPermalink }}
+            {{ range site.Data.menu.main }}
+                {{ if .isMain }}
+                    {{ $isActive := eq $current .url }}
+                    <li>
+                        <a href="{{ .url }}" class="{{ if $isActive }} text-red-400{{ end }}" {{ if .isExternal }} target="_blank" {{end}}>
+                            <span>{{ .title }}</span>
+                            {{/* partial "icons/arrow-menu.html" . */}}
+                        </a>
+                    </li>
+                {{ end }}
+            {{ end }}
             </ul>
+            
         </nav>
         <div class="">
-            social links
+            {{ .Site.Data.config.contact.phone }}
         </div>
 
     </div>

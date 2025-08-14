@@ -18,8 +18,13 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.10",
+    "@tailwindcss/cli": "^4.1.11",
     "@tailwindcss/typography": "^0.5.16",
-    "tailwindcss": "^4.1.10"
+    "autoprefixer": "^10.4.21",
+    "tailwindcss": "^4.1.11"
+  },
+  "dependencies": {
+    "alpinejs": "^3.14.9",
+    "swiper": "^11.2.8"
   }
 }
